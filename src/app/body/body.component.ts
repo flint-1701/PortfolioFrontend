@@ -1,4 +1,4 @@
-import { Component, OnInit,ViewChild,ElementRef,OnDestroy } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, OnDestroy } from '@angular/core';
 import { personalData } from './personalData.model';
 import { HttpClient } from '@angular/common/http';
 import Typed from 'typed.js';
@@ -22,12 +22,13 @@ export class BodyComponent implements OnInit {
   typedDescription?: Typed;
 
   ngOnInit() {
-    setTimeout(()=>this.getData(), 2000);
+    this.initTypedName();
+    this.initTypedDesc();
   }
 
   initTypedName(): void {
     const options = {
-      strings: [this.InputData.FullName],
+      strings: ["Akshay Birari"],
       typeSpeed: 60,
       backSpeed: 40,
       loop: false
@@ -38,7 +39,10 @@ export class BodyComponent implements OnInit {
 
   initTypedDesc(): void {
     const options = {
-      strings: [this.InputData.Description],
+      strings: [`Full Stack Developer with 3+ years of experience in building enterprise-grade web applications using C#, .NET, 
+Angular, SQL, and MongoDB. Skilled in optimizing performance, scalable architecture, and clean code practices. 
+Proficient in Data Structures, Algorithms, and System Design, with a focus on solving complex engineering 
+challenges and contributing to growth-oriented teams.`],
       typeSpeed: 10,
       backSpeed: 120,
       loop: false
@@ -48,17 +52,7 @@ export class BodyComponent implements OnInit {
   }
 
   ngOnDestroy(): void {
-    this.typedFullName?.destroy(); 
+    this.typedFullName?.destroy();
     this.typedDescription?.destroy();// Cleanup
-  }
-
-  getData() {
-    this.httpClient.get<personalData>("https://localhost:7020/api/MySelf").subscribe({
-      next: (responseData) => {
-        this.InputData = responseData;
-        this.initTypedName();
-        this.initTypedDesc();
-      }
-    })
   }
 }
