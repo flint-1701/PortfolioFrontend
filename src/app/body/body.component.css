@@ -1,0 +1,73 @@
+.intro-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 4rem;
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+.intro-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        45deg,
+        #E3F2FD,  /* Light Blue */
+        #F3E5F5,  /* Light Purple */
+        #E8EAF6,  /* Light Indigo */
+        #E1F5FE   /* Light Cyan */
+    );
+    background-size: 400% 400%;
+    z-index: 0;
+    animation: gradientBG 15s ease infinite;
+    opacity: 0.95;
+}
+
+/* Content styling */
+h2 {
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    position: relative;
+    z-index: 1;
+    color: #1A237E;  /* Dark Indigo */
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.name-highlight {
+    color: #303F9F;  /* Indigo */
+    font-weight: 800;
+    transition: color 0.3s ease;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.name-highlight:hover {
+    color: #512DA8;  /* Deep Purple */
+}
+
+.career-summary {
+    max-width: 90%;
+    line-height: 1.8;
+    font-size: 1rem;
+    text-align: left;
+    position: relative;
+    z-index: 1;
+    color: #283593;  /* Indigo Dark */
+    font-weight: 500;
+    letter-spacing: 0.2px;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}

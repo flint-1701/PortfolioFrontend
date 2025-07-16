@@ -1,0 +1,201 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #E3F2FD 0%, #F3E5F5 25%, #E8EAF6 50%, #E1F5FE 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.footer {
+    background: linear-gradient(135deg, rgba(227, 242, 253, 0.95) 0%, rgba(243, 229, 245, 0.95) 25%, rgba(232, 234, 246, 0.95) 50%, rgba(225, 245, 254, 0.95) 100%);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 2rem 0;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(20px);
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #6366f1, transparent);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer-links {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.footer-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 12px;
+    color: #374151;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.footer-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.5s ease;
+}
+
+.footer-link:hover::before {
+    left: 100%;
+}
+
+.footer-link:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.9);
+    border-color: rgba(99, 102, 241, 0.6);
+    box-shadow: 0 8px 32px rgba(99, 102, 241, 0.2);
+}
+
+.footer-link.github:hover {
+    border-color: rgba(75, 85, 99, 0.6);
+    box-shadow: 0 8px 32px rgba(75, 85, 99, 0.2);
+}
+
+.footer-link.linkedin:hover {
+    border-color: rgba(0, 119, 181, 0.6);
+    box-shadow: 0 8px 32px rgba(0, 119, 181, 0.2);
+}
+
+.footer-link.email:hover {
+    border-color: rgba(234, 67, 53, 0.6);
+    box-shadow: 0 8px 32px rgba(234, 67, 53, 0.2);
+}
+
+.footer-link.resume:hover {
+    border-color: rgba(52, 199, 89, 0.6);
+    box-shadow: 0 8px 32px rgba(52, 199, 89, 0.2);
+}
+
+.footer-icon {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+    transition: transform 0.3s ease;
+}
+
+.footer-link:hover .footer-icon {
+    transform: scale(1.1);
+}
+
+.footer-text {
+    color: rgba(55, 65, 81, 0.7);
+    font-size: 0.85rem;
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+.footer-divider {
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #6366f1, transparent);
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .footer-links {
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+    }
+
+    .footer-link {
+        width: 100%;
+        justify-content: center;
+        max-width: 280px;
+    }
+
+    .footer-container {
+        padding: 0 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-link {
+        padding: 1rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* Floating animation for subtle movement */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-2px);
+    }
+}
+
+.footer-link {
+    animation: float 3s ease-in-out infinite;
+}
+
+.footer-link:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.footer-link:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.footer-link:nth-child(3) {
+    animation-delay: 1s;
+}
+
+.footer-link:nth-child(4) {
+    animation-delay: 1.5s;
+}
