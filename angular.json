@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "PortfolioFrontend/dist/PortfolioFrontend/browser",
+            "outputPath": "dist/browser",
             "baseHref": "/PortfolioFrontend/",
             "index": "src/index.html",
             "browser": "src/main.ts",
