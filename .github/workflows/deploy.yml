@@ -25,10 +25,10 @@ jobs:
         run: npm install
 
       - name: Build Angular App
-        run: npm run build -- --configuration production
+        run: npm run build -- --configuration production --base-href /PortfolioFrontend/
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages  # Target branch
-          folder: dist/portfolio-frontend  # Output folder
+          folder: dist/portfolio-frontend/  # Output folder
