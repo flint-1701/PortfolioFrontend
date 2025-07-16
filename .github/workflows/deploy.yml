@@ -25,7 +25,7 @@ jobs:
         run: npm install
 
       - name: Build Angular App
-        run: npm run build -- --configuration production --base-href /PortfolioFrontend/
+        run: npm run build -- --configuration production
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
